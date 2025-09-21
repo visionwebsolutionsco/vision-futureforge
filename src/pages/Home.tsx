@@ -1,3 +1,4 @@
+// src/pages/Home.tsx
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Code, Bot, Cog } from "lucide-react";
