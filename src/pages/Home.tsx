@@ -27,10 +27,19 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <div className="min-h-screen w-full relative bg-background">
+      {/* Pearl Mist Background with Top Glow */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background: "radial-gradient(ellipse 50% 35% at 50% 0%, hsl(var(--primary) / 0.12), transparent 60%), hsl(var(--background))",
+        }}
+      />
       
-      <Hero />
+      <div className="relative z-10">
+        <Navbar />
+        
+        <Hero />
       
       {/* Services Section */}
       <section className="py-20 px-4 bg-secondary/30">
@@ -61,7 +70,8 @@ const Home = () => {
       {/* Testimonials Section */}
       <TestimonialCarousel />
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 };
