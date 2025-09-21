@@ -9,6 +9,7 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { GlassFilter } from "@/components/ui/liquid-glass";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <GlassFilter />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
