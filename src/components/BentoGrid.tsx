@@ -1,5 +1,6 @@
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
+import OrbitingSkills from "@/components/ui/orbiting-skills";
 import { 
   Database, 
   Lock, 
@@ -35,29 +36,8 @@ Circle.displayName = "Circle";
 
 // Visual Components
 const DatabaseVisual = () => (
-  <div className="w-16 h-12 relative">
-    <div className="absolute inset-0 opacity-20">
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path
-          d="M20 20 Q50 10 80 20 L80 80 Q50 90 20 80 Z"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <path
-          d="M20 40 Q50 30 80 40"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <path
-          d="M20 60 Q50 50 80 60"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-      </svg>
-    </div>
+  <div className="absolute right-2 top-4 h-[300px] w-full scale-50 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-75">
+    <OrbitingSkills />
   </div>
 );
 
