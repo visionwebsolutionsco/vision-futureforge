@@ -198,7 +198,7 @@ export const ServicesBentoGrid = () => {
       background: <DatabaseVisual />,
       href: "/services/web-development",
       cta: "Learn more",
-      className: "col-span-3 lg:col-span-1"
+      className: "col-span-3 lg:col-span-2"
     },
     {
       name: "Authentication & Security",
