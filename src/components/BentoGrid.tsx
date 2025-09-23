@@ -36,7 +36,7 @@ Circle.displayName = "Circle";
 
 // Visual Components
 const DatabaseVisual = () => (
-  <div className="absolute right-2 top-4 h-[300px] w-[200px] scale-75 border-none transition-all duration-300 ease-out group-hover:scale-100">
+  <div className="absolute right-2 top-4 h-[300px] w-full scale-50 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-75">
     <OrbitingSkills />
   </div>
 );
