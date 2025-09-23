@@ -289,7 +289,7 @@ export default function OrbitingSkills() {
   return (
     <main className="w-full flex items-center justify-center overflow-hidden">
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute -right-8 top-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-10 overflow-hidden">
         <div 
           className="absolute inset-0" 
           style={{
