@@ -288,6 +288,16 @@ export default function OrbitingSkills() {
 
   return (
     <main className="w-full flex items-center justify-center overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute -right-8 top-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-10 overflow-hidden">
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, #374151 0%, transparent 50%),
+                             radial-gradient(circle at 75% 75%, #4B5563 0%, transparent 50%)`,
+          }}
+        />
+      </div>
 
       <div 
         className="relative w-[calc(100vw-40px)] h-[calc(100vw-40px)] md:w-[450px] md:h-[450px] flex items-center justify-center"
