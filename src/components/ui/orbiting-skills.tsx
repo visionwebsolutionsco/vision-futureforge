@@ -102,8 +102,8 @@ const skillsConfig: SkillConfig[] = [
   // Inner Orbit
   { 
     id: 'html',
-    orbitRadius: 100, 
-    size: 40, 
+    orbitRadius: 140, 
+    size: 48, 
     speed: 1, 
     iconType: 'html', 
     phaseShift: 0, 
@@ -112,8 +112,8 @@ const skillsConfig: SkillConfig[] = [
   },
   { 
     id: 'css',
-    orbitRadius: 100, 
-    size: 45, 
+    orbitRadius: 140, 
+    size: 52, 
     speed: 1, 
     iconType: 'css', 
     phaseShift: (2 * Math.PI) / 3, 
@@ -122,8 +122,8 @@ const skillsConfig: SkillConfig[] = [
   },
   { 
     id: 'javascript',
-    orbitRadius: 100, 
-    size: 40, 
+    orbitRadius: 140, 
+    size: 48, 
     speed: 1, 
     iconType: 'javascript', 
     phaseShift: (4 * Math.PI) / 3, 
@@ -133,8 +133,8 @@ const skillsConfig: SkillConfig[] = [
   // Outer Orbit
   { 
     id: 'react',
-    orbitRadius: 180, 
-    size: 50, 
+    orbitRadius: 260, 
+    size: 60, 
     speed: -0.6, 
     iconType: 'react', 
     phaseShift: 0, 
@@ -143,8 +143,8 @@ const skillsConfig: SkillConfig[] = [
   },
   { 
     id: 'node',
-    orbitRadius: 180, 
-    size: 45, 
+    orbitRadius: 260, 
+    size: 54, 
     speed: -0.6, 
     iconType: 'node', 
     phaseShift: (2 * Math.PI) / 3, 
@@ -153,8 +153,8 @@ const skillsConfig: SkillConfig[] = [
   },
   { 
     id: 'tailwind',
-    orbitRadius: 180, 
-    size: 40, 
+    orbitRadius: 260, 
+    size: 50, 
     speed: -0.6, 
     iconType: 'tailwind', 
     phaseShift: (4 * Math.PI) / 3, 
@@ -282,15 +282,15 @@ export default function OrbitingSkills() {
   }, [isPaused]);
 
   const orbitConfigs: Array<{ radius: number; glowColor: GlowColor; delay: number }> = [
-    { radius: 100, glowColor: 'cyan', delay: 0 },
-    { radius: 180, glowColor: 'purple', delay: 1.5 }
+    { radius: 140, glowColor: 'cyan', delay: 0 },
+    { radius: 260, glowColor: 'purple', delay: 1.5 }
   ];
 
   return (
-    <main className="w-full flex items-center justify-center overflow-hidden">
+    <main className="w-full flex items-start justify-center overflow-hidden">
 
       <div 
-        className="relative w-[calc(100vw-20px)] h-[calc(100vw-20px)] md:w-[650px] md:h-[650px] flex items-center justify-center"
+        className="relative w-full aspect-square max-w-[780px] md:max-w-[900px] lg:max-w-[1100px] flex items-center justify-center"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
