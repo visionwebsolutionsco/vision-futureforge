@@ -3,7 +3,6 @@ import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import OrbitingSkills from "@/components/ui/orbiting-skills";
 import { 
   Database, 
-  Lock, 
   Globe, 
   FolderOpen, 
   Zap, 
@@ -14,7 +13,13 @@ import {
   Cpu,
   Network,
   Brain,
-  Bot
+  Bot,
+  Share2,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube
 } from "lucide-react";
 import { useRef, forwardRef } from "react";
 
@@ -120,6 +125,36 @@ const RealtimeVisual = () => (
       </div>
       <div className="absolute -bottom-1 -right-1 w-8 h-6 bg-green-500/20 rounded-full blur-lg" />
       <div className="absolute top-0 -left-2 w-4 h-4 bg-teal-500/20 rounded-full blur-md" />
+    </div>
+  </div>
+);
+
+const SocialMediaVisual = () => (
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10" />
+    <div className="absolute top-4 right-4 w-32 h-20">
+      <div className="grid grid-cols-3 gap-2 p-2">
+        <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-2 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200">
+          <Facebook className="w-3 h-3 text-blue-600" />
+        </div>
+        <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-2 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200">
+          <Twitter className="w-3 h-3 text-sky-500" />
+        </div>
+        <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-2 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200">
+          <Instagram className="w-3 h-3 text-pink-500" />
+        </div>
+        <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-2 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200">
+          <Linkedin className="w-3 h-3 text-blue-700" />
+        </div>
+        <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-2 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200">
+          <Youtube className="w-3 h-3 text-red-600" />
+        </div>
+        <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-2 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200">
+          <Share2 className="w-3 h-3 text-violet-500" />
+        </div>
+      </div>
+      <div className="absolute -bottom-2 -right-2 w-10 h-8 bg-gradient-to-r from-blue-500/20 to-pink-500/20 rounded-full blur-lg" />
+      <div className="absolute -top-1 -left-1 w-6 h-6 bg-purple-500/20 rounded-full blur-md" />
     </div>
   </div>
 );
@@ -237,11 +272,11 @@ export const ServicesBentoGrid = () => {
       className: "col-span-3 lg:col-span-2"
     },
     {
-      name: "Authentication & Security",
-      description: "Secure user management with enterprise-grade security and role-based access control.",
-      Icon: Lock,
-      background: <AuthVisual />,
-      href: "/services/authentication",
+      name: "Social Media Presence",
+      description: "Build and manage your social media presence across all major platforms with integrated tools.",
+      Icon: Share2,
+      background: <SocialMediaVisual />,
+      href: "/services/social-media",
       cta: "Learn more",
       className: "col-span-3 lg:col-span-1"
     },
