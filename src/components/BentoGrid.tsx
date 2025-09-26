@@ -159,94 +159,76 @@ const SocialMediaVisual = () => (
   </div>
 );
 
-const VectorVisual = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const div1Ref = useRef<HTMLDivElement>(null);
-  const div2Ref = useRef<HTMLDivElement>(null);
-  const div3Ref = useRef<HTMLDivElement>(null);
-  const div4Ref = useRef<HTMLDivElement>(null);
-  const div5Ref = useRef<HTMLDivElement>(null);
-
-  return (
-    <div className="w-20 h-16 relative" ref={containerRef}>
-      <div className="flex size-full max-h-[60px] max-w-[80px] flex-col items-stretch justify-between gap-2">
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div1Ref} className="size-6">
-            <Database className="w-3 h-3 text-primary" />
-          </Circle>
-          <Circle ref={div5Ref} className="size-6">
-            <Bot className="w-3 h-3 text-primary" />
-          </Circle>
+const AIVisual = () => (
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-blue-500/10 to-cyan-500/10" />
+    <div className="absolute top-4 right-4 w-36 h-24">
+      {/* Neural network nodes */}
+      <div className="relative w-full h-full">
+        {/* Input layer */}
+        <div className="absolute left-2 top-2 space-y-2">
+          <div className="w-2 h-2 bg-violet-400 rounded-full animate-pulse"></div>
+          <div className="w-2 h-2 bg-violet-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+          <div className="w-2 h-2 bg-violet-400 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
         </div>
-        <div className="flex flex-row items-center justify-center">
-          <Circle ref={div4Ref} className="size-7">
-            <Brain className="w-4 h-4 text-primary" />
-          </Circle>
+        
+        {/* Hidden layer */}
+        <div className="absolute left-1/2 top-1 space-y-1.5 transform -translate-x-1/2">
+          <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.1s' }}></div>
+          <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.3s' }}></div>
+          <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.7s' }}></div>
         </div>
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div2Ref} className="size-6">
-            <Cpu className="w-3 h-3 text-primary" />
-          </Circle>
-          <Circle ref={div3Ref} className="size-6">
-            <Network className="w-3 h-3 text-primary" />
-          </Circle>
+        
+        {/* Output layer */}
+        <div className="absolute right-2 top-4">
+          <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: '0.6s' }}></div>
         </div>
+        
+        {/* Connection lines */}
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 144 96">
+          <defs>
+            <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="rgb(139 92 246)" stopOpacity="0.3" />
+              <stop offset="50%" stopColor="rgb(59 130 246)" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="rgb(34 211 238)" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          {/* Input to hidden connections */}
+          <line x1="16" y1="16" x2="72" y2="12" stroke="url(#connectionGradient)" strokeWidth="1" opacity="0.6" />
+          <line x1="16" y1="24" x2="72" y2="18" stroke="url(#connectionGradient)" strokeWidth="1" opacity="0.6" />
+          <line x1="16" y1="32" x2="72" y2="24" stroke="url(#connectionGradient)" strokeWidth="1" opacity="0.6" />
+          <line x1="16" y1="24" x2="72" y2="30" stroke="url(#connectionGradient)" strokeWidth="1" opacity="0.6" />
+          
+          {/* Hidden to output connections */}
+          <line x1="72" y1="12" x2="128" y2="32" stroke="url(#connectionGradient)" strokeWidth="1" opacity="0.6" />
+          <line x1="72" y1="18" x2="128" y2="32" stroke="url(#connectionGradient)" strokeWidth="1" opacity="0.6" />
+          <line x1="72" y1="24" x2="128" y2="32" stroke="url(#connectionGradient)" strokeWidth="1" opacity="0.6" />
+          <line x1="72" y1="30" x2="128" y2="32" stroke="url(#connectionGradient)" strokeWidth="1" opacity="0.6" />
+        </svg>
+        
+        {/* AI chip representation */}
+        <div className="absolute bottom-2 left-2 w-8 h-6 bg-card/80 backdrop-blur-sm border border-border/50 rounded-md shadow-lg">
+          <div className="grid grid-cols-2 gap-0.5 p-1 h-full">
+            <div className="bg-violet-400/30 rounded-sm"></div>
+            <div className="bg-blue-400/30 rounded-sm"></div>
+            <div className="bg-cyan-400/30 rounded-sm"></div>
+            <div className="bg-purple-400/30 rounded-sm"></div>
+          </div>
+        </div>
+        
+        {/* Floating data particles */}
+        <div className="absolute top-8 left-8 w-1 h-1 bg-violet-300 rounded-full animate-bounce" style={{ animationDelay: '0.8s' }}></div>
+        <div className="absolute top-12 left-16 w-1 h-1 bg-blue-300 rounded-full animate-bounce" style={{ animationDelay: '1.2s' }}></div>
+        <div className="absolute top-6 right-8 w-1 h-1 bg-cyan-300 rounded-full animate-bounce" style={{ animationDelay: '1.6s' }}></div>
       </div>
       
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div1Ref}
-        toRef={div4Ref}
-        curvature={-30}
-        endYOffset={-5}
-        pathWidth={1}
-        pathOpacity={0.4}
-        gradientStartColor="#3b82f6"
-        gradientStopColor="#8b5cf6"
-        duration={2}
-        delay={0.2}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div2Ref}
-        toRef={div4Ref}
-        pathWidth={1}
-        pathOpacity={0.4}
-        gradientStartColor="#3b82f6"
-        gradientStopColor="#8b5cf6"
-        duration={2.5}
-        delay={0.4}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div3Ref}
-        toRef={div4Ref}
-        curvature={30}
-        endYOffset={5}
-        pathWidth={1}
-        pathOpacity={0.4}
-        gradientStartColor="#3b82f6"
-        gradientStopColor="#8b5cf6"
-        duration={3}
-        delay={0.6}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div5Ref}
-        toRef={div4Ref}
-        curvature={-30}
-        endYOffset={-5}
-        reverse
-        pathWidth={1}
-        pathOpacity={0.4}
-        gradientStartColor="#8b5cf6"
-        gradientStopColor="#3b82f6"
-        duration={2.2}
-        delay={0.3}
-      />
+      {/* Glow effects */}
+      <div className="absolute -bottom-2 -right-2 w-12 h-8 bg-gradient-to-r from-violet-500/20 via-blue-500/20 to-cyan-500/20 rounded-full blur-lg" />
+      <div className="absolute -top-1 -left-1 w-8 h-6 bg-violet-500/20 rounded-full blur-md" />
     </div>
-  );
-};
+  </div>
+);
 
 const DataAPIsVisual = () => (
   <div className="w-24 h-12 space-y-0.5">
@@ -311,7 +293,7 @@ export const ServicesBentoGrid = () => {
       name: "AI Integration",
       description: "Integrate machine learning models to enhance your applications with intelligent features.",
       Icon: Brain,
-      background: <VectorVisual />,
+      background: <AIVisual />,
       href: "/services/ai-integration",
       cta: "Learn more",
       className: "col-span-3 lg:col-span-2"
