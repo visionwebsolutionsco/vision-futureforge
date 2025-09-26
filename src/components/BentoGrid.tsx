@@ -36,54 +36,90 @@ Circle.displayName = "Circle";
 
 // Visual Components
 const DatabaseVisual = () => (
-  <div className="absolute right-2 -top-8 h-[300px] w-full scale-50 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_100%)] group-hover:scale-75">
-    <OrbitingSkills />
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-60" />
+    <div className="absolute right-2 -top-8 h-[300px] w-full scale-50 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_100%)] group-hover:scale-75">
+      <OrbitingSkills />
+    </div>
+    <div className="absolute bottom-4 right-4 w-24 h-16 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur-xl" />
   </div>
 );
 
 const AuthVisual = () => (
-  <div className="w-20 h-16 grid grid-cols-2 gap-1">
-    <div className="bg-muted/40 rounded p-1 text-xs">
-      <div className="text-muted-foreground text-[10px] mb-0.5">Email</div>
-      <div className="bg-background/60 rounded px-1 py-0.5 text-[9px]">user@ex.com</div>
-    </div>
-    <div className="bg-muted/40 rounded p-1 text-xs">
-      <div className="text-muted-foreground text-[10px] mb-0.5">Password</div>
-      <div className="bg-background/60 rounded px-1 py-0.5 text-[9px]">••••••••</div>
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-blue-500/10" />
+    <div className="absolute top-6 right-6 w-32 h-20">
+      <div className="grid grid-cols-2 gap-2">
+        <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-2 shadow-lg">
+          <div className="text-muted-foreground text-[10px] mb-1 font-medium">Email</div>
+          <div className="bg-primary/10 rounded px-2 py-1 text-[9px] text-foreground">user@ex.com</div>
+        </div>
+        <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-2 shadow-lg">
+          <div className="text-muted-foreground text-[10px] mb-1 font-medium">Password</div>
+          <div className="bg-primary/10 rounded px-2 py-1 text-[9px] text-foreground">••••••••</div>
+        </div>
+      </div>
+      <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-emerald-500/20 rounded-full blur-md" />
+      <div className="absolute -top-1 -left-1 w-6 h-6 bg-blue-500/20 rounded-full blur-md" />
     </div>
   </div>
 );
 
 const EdgeFunctionsVisual = () => (
-  <div className="w-20 h-12 relative">
-    <div className="bg-muted/30 rounded p-2 text-xs font-mono h-full">
-      <div className="text-green-400 text-[10px]">$ deploy</div>
-      <div className="text-muted-foreground text-[9px]">Deploying...</div>
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-cyan-500/10" />
+    <div className="absolute top-6 right-6 w-28 h-16">
+      <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-3 text-xs font-mono h-full shadow-lg">
+        <div className="flex items-center gap-1 mb-1">
+          <div className="w-1 h-1 bg-green-400 rounded-full animate-pulse"></div>
+          <div className="text-green-400 text-[10px] font-semibold">$ deploy</div>
+        </div>
+        <div className="text-muted-foreground text-[9px]">Deploying...</div>
+        <div className="w-12 h-0.5 bg-gradient-to-r from-green-400 to-transparent rounded-full mt-2 animate-pulse"></div>
+      </div>
+      <div className="absolute -bottom-1 -right-1 w-10 h-6 bg-violet-500/20 rounded-full blur-lg" />
     </div>
   </div>
 );
 
 const StorageVisual = () => (
-  <div className="w-16 h-12 grid grid-cols-3 gap-0.5">
-    {Array.from({ length: 9 }).map((_, i) => (
-      <div key={i} className="aspect-square bg-muted/30 rounded flex items-center justify-center">
-        {i < 3 ? (
-          <ImageIcon className="w-2 h-2 text-muted-foreground" />
-        ) : i < 6 ? (
-          <FileText className="w-2 h-2 text-muted-foreground" />
-        ) : (
-          <Video className="w-2 h-2 text-muted-foreground" />
-        )}
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-pink-500/10" />
+    <div className="absolute top-6 right-6 w-20 h-16">
+      <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-2 shadow-lg">
+        <div className="grid grid-cols-3 gap-1">
+          {Array.from({ length: 9 }).map((_, i) => (
+            <div key={i} className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded flex items-center justify-center shadow-sm hover:scale-110 transition-transform duration-200">
+              {i < 3 ? (
+                <ImageIcon className="w-2 h-2 text-primary" />
+              ) : i < 6 ? (
+                <FileText className="w-2 h-2 text-accent" />
+              ) : (
+                <Video className="w-2 h-2 text-secondary" />
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
+      <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-orange-500/20 rounded-full blur-md" />
+      <div className="absolute -top-1 -left-1 w-6 h-6 bg-pink-500/20 rounded-full blur-md" />
+    </div>
   </div>
 );
 
 const RealtimeVisual = () => (
-  <div className="w-16 h-12 relative">
-    <div className="bg-muted/30 rounded p-2 flex items-center gap-1 h-full">
-      <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
-      <div className="text-[9px] text-muted-foreground">Live</div>
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-teal-500/10" />
+    <div className="absolute top-6 right-6 w-20 h-14">
+      <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-3 flex items-center gap-2 h-full shadow-lg">
+        <div className="relative">
+          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <div className="absolute inset-0 w-2 h-2 bg-green-500 rounded-full animate-ping opacity-75"></div>
+        </div>
+        <div className="text-[10px] text-foreground font-medium">Live</div>
+      </div>
+      <div className="absolute -bottom-1 -right-1 w-8 h-6 bg-green-500/20 rounded-full blur-lg" />
+      <div className="absolute top-0 -left-2 w-4 h-4 bg-teal-500/20 rounded-full blur-md" />
     </div>
   </div>
 );
