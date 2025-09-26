@@ -19,7 +19,11 @@ import {
   Twitter,
   Instagram,
   Linkedin,
-  Youtube
+  Youtube,
+  BarChart3,
+  TrendingUp,
+  Search,
+  MapPin
 } from "lucide-react";
 import { useRef, forwardRef } from "react";
 
@@ -70,19 +74,41 @@ const AuthVisual = () => (
   </div>
 );
 
-const EdgeFunctionsVisual = () => (
+const AnalyticsVisual = () => (
   <div className="absolute inset-0 overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-cyan-500/10" />
-    <div className="absolute top-6 right-6 w-28 h-16">
-      <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-3 text-xs font-mono h-full shadow-lg">
-        <div className="flex items-center gap-1 mb-1">
-          <div className="w-1 h-1 bg-green-400 rounded-full animate-pulse"></div>
-          <div className="text-green-400 text-[10px] font-semibold">$ deploy</div>
+    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-blue-500/10 to-purple-500/10" />
+    <div className="absolute top-4 right-4 w-32 h-20">
+      {/* Analytics chart */}
+      <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-2 shadow-lg mb-2">
+        <div className="flex items-end gap-1 h-8">
+          <div className="w-2 bg-emerald-400 rounded-sm h-3"></div>
+          <div className="w-2 bg-emerald-400 rounded-sm h-5"></div>
+          <div className="w-2 bg-emerald-400 rounded-sm h-7"></div>
+          <div className="w-2 bg-blue-400 rounded-sm h-4"></div>
+          <div className="w-2 bg-blue-400 rounded-sm h-6"></div>
+          <div className="w-2 bg-blue-400 rounded-sm h-8"></div>
         </div>
-        <div className="text-muted-foreground text-[9px]">Deploying...</div>
-        <div className="w-12 h-0.5 bg-gradient-to-r from-green-400 to-transparent rounded-full mt-2 animate-pulse"></div>
+        <div className="flex items-center gap-1 mt-1">
+          <TrendingUp className="w-2 h-2 text-emerald-500" />
+          <span className="text-[8px] text-foreground font-medium">+24%</span>
+        </div>
       </div>
-      <div className="absolute -bottom-1 -right-1 w-10 h-6 bg-violet-500/20 rounded-full blur-lg" />
+      
+      {/* SEO indicators */}
+      <div className="flex gap-1">
+        <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded p-1 shadow-lg flex items-center gap-1">
+          <Search className="w-2 h-2 text-blue-500" />
+          <span className="text-[8px] text-foreground">#1</span>
+        </div>
+        <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded p-1 shadow-lg flex items-center gap-1">
+          <MapPin className="w-2 h-2 text-red-500" />
+          <span className="text-[8px] text-foreground">Maps</span>
+        </div>
+      </div>
+      
+      {/* Glow effects */}
+      <div className="absolute -bottom-2 -right-2 w-10 h-6 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 rounded-full blur-lg" />
+      <div className="absolute -top-1 -left-1 w-6 h-6 bg-purple-500/20 rounded-full blur-md" />
     </div>
   </div>
 );
@@ -263,11 +289,11 @@ export const ServicesBentoGrid = () => {
       className: "col-span-3 lg:col-span-1"
     },
     {
-      name: "Cloud Infrastructure",
-      description: "Deploy and scale your applications without managing servers or infrastructure.",
-      Icon: Globe,
-      background: <EdgeFunctionsVisual />,
-      href: "/services/cloud-infrastructure",
+      name: "Analytics & Discoverability",
+      description: "Boost your online presence with advanced SEO optimization and Google Maps integration.",
+      Icon: BarChart3,
+      background: <AnalyticsVisual />,
+      href: "/services/analytics-seo",
       cta: "Learn more",
       className: "col-span-3 lg:col-span-1"
     },
